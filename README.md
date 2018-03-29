@@ -1,4 +1,12 @@
 ## Run ATM.java and ATMTests.java
+
+**Prerequisite**
+```
+1. Editor/IDE to build and run code and tests
+2. Junit Library
+3. JDK and Environmental variables configured
+```
+**Builing and running tests**
 ```
 1. Create a project
 2. Create a package then create a class called ATM.java
