@@ -58,4 +58,43 @@ public class ATMTest {
 			fail();
 		}
 	}
+	
+	package moja;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Test;
+
+public class Moja {
+
+    public static WebDriver driver;
+
+    @Test
+    public void launchBrowser() throws MalformedURLException {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("deviceName", "My Phone");
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("platformVersion", "6.0");
+        caps.setCapability("browserName", "Chrome");
+        caps.setCapability("noReset", true);
+        driver = new RemoteWebDriver(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+        //Open URL in Chrome Browser
+        driver.get("http://mojawifi.com");
+    }
+    @Test
+    public void captive(){
+        try {
+            WebElement BtnWelcome = driver.findElement(By.xpath("//*[contains(text(), 'Welcome to Moja')])"));
+            BtnWelcome.click();
+        }
+        catch (Exception e)
+        {
+            System.out.println("User Already Exists")
+        }
+        if ()
+    }
+}
 }
